@@ -415,6 +415,7 @@ function showContext(activity: 'location' | 'weather' | 'moving-average' | 'regr
   $('context-response').hidden = activity !== 'response';
   $('context-workbench').hidden = !workbench;
   $('prediction-lab').hidden = !workbench;
+  if (uiState.getState().gameMode === 'free-play' && workbench) updateProgressiveDisclosure(null);
   if (workbench) requestAnimationFrame(() => predictionChart?.resize());
 }
 
@@ -560,6 +561,13 @@ function renderCampaign() {
   const guideButton = $('guide-action') as HTMLButtonElement;
   guideButton.textContent = guided ? guide.action : 'OPEN WEATHER LAB';
   guideButton.dataset.mode = guided ? guide.mode : 'analysis';
+  if (!guided) {
+    // Guided-step selectors hide campaign-only controls. Clear them when the
+    // player switches modes so Free Play navigation stays unrestricted.
+    delete document.body.dataset.tutorialMission;
+    delete document.body.dataset.tutorialStep;
+    guideButton.hidden = false;
+  }
   $('mission-list').hidden = !guided;
   $('mission-progress-block').classList.toggle('free-play', !guided);
   document.querySelectorAll<HTMLButtonElement>('.mode-button').forEach(button => {
@@ -658,6 +666,17 @@ function serializeStateAction<T>(action: () => Promise<T>): Promise<T> {
 
 function showApiError(error: unknown) {
   const message = error instanceof Error ? error.message : 'Unknown API error';
+  if (!(error instanceof ApiError)) {
+    // Keep rendering/runtime bugs distinct from real HTTP or network failures.
+    console.error('STORMWATCH interface error:', error);
+    $('map-status').textContent = 'GAME INTERFACE ERROR';
+    $('map-status').classList.remove('online');
+    $('map-status').classList.add('offline');
+    $('map-loading').textContent = `GAME DISPLAY ERROR · ${message}`;
+    $('map-loading').style.display = 'block';
+    notify(message);
+    return;
+  }
   $('map-status').textContent = error instanceof ApiError && error.isInvalidSession
     ? 'SESSION LOST · START A NEW RUN'
     : error instanceof ApiError && error.isNetworkFailure ? 'PYTHON SERVICE OFFLINE' : 'API REQUEST FAILED';
@@ -975,7 +994,13 @@ function renderStageActions() {
     'save-novara': `<button id="start-scenario" class="forecast-button">${gameState?.scenario_progress.started ? 'RESTART STORM' : 'PREPARE EASTBANK STORM'} ↗</button>${gameState?.scenario_progress.started && !gameState.scenario_progress.complete ? `<button id="run-response" class="forecast-button">${paused ? 'RUN RESPONSE' : 'PAUSE RESPONSE'} ▶</button>` : ''}<button id="evaluate-access" class="forecast-button" ${gameState?.scenario_progress.complete ? '' : 'disabled'}>EVALUATE CITY ACCESS ↗</button>`,
   };
   actions.innerHTML = buttons[stage];
-  document.querySelector('#show-average')?.addEventListener('click', () => void calculateSixHourAverage());
+  document.querySelector('#show-average')?.addEventListener('click', () => {
+    // In Free Play this action can be reached from the station details panel,
+    // before any graph has been opened. Open the workbench and seed the chart
+    // with the selected station's observations before drawing the mean line.
+    showContext('weather', true);
+    void calculateSixHourAverage();
+  });
   document.querySelector('#reveal-stage-graph')?.addEventListener('click', () => {
     const stationId = ($('lab-station') as HTMLSelectElement).value || 'weather-central';
     const readings = stationStormSeries(stationId);
@@ -1125,14 +1150,16 @@ async function calculateSixHourAverage() {
   const readings = hourlyRainfallForStation(stationId);
   if (readings.length !== 6 || !sessionId) { notify('Meteo AI: six hourly station readings are needed for this calculation.'); return; }
   try {
+    paintSixHourRain(stationId);
     const result = await calculateStatistics(readings.map(row => row.rainfall_mm_hr), sessionId);
     const label = `${result.sum.toFixed(1)} ÷ ${result.count} = ${result.mean.toFixed(1)} mm/h`;
-    predictionChart!.data.datasets.push({
+    if (!predictionChart) throw new Error('The rainfall graph could not be initialized. Close and reopen the Weather Lab.');
+    predictionChart.data.datasets.push({
       label: `Six-hour mean · ${result.mean.toFixed(1)} mm/h`,
       data: [{ x: 0, y: result.mean }, { x: 5, y: result.mean }],
       showLine: true, borderColor: '#f2c96e', backgroundColor: '#f2c96e', pointRadius: 0, borderDash: [5, 4], borderWidth: 2,
     });
-    predictionChart!.update();
+    predictionChart.update();
     $('lab-forecast-output').textContent = `VISUAL MEAN · ${label}`;
     $('lab-metrics').textContent = `${result.sum.toFixed(1)} mm/h across ${result.count} hourly observations`;
     $('lab-note').textContent = `Formula: mean = total rainfall ÷ number of readings. ${result.mean.toFixed(1)} mm/h summarizes this six-hour watch.`;
