@@ -5,6 +5,7 @@ from pathlib import Path
 import numpy as np
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.models import (
     AdvanceRequest,
@@ -410,3 +411,10 @@ def api_analytics_forecast(request: ForecastRequest) -> dict:
     except ValueError as exc:
         status = 404 if "Unknown monitoring station" in str(exc) else 422
         raise HTTPException(status_code=status, detail=str(exc)) from exc
+
+
+# In production, serve the built Phaser application from the same origin as the
+# API. Local development continues to use Vite on port 5173.
+_frontend_dist = Path(__file__).resolve().parents[2] / "frontend" / "dist"
+if _frontend_dist.is_dir():
+    app.mount("/", StaticFiles(directory=str(_frontend_dist), html=True), name="frontend")

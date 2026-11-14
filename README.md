@@ -38,6 +38,12 @@ The setup script creates `backend/.venv`, installs `backend/requirements.txt`, a
 
 The game does not require API keys, cloud credentials, or a database. Vite proxies requests to the local FastAPI server at `http://127.0.0.1:8000` by default. To use a different local backend address, copy `frontend/.env.example` to `frontend/.env.local` and set `VITE_API_PROXY_TARGET`. Local `.env` files are ignored by Git; never put passwords or tokens in the example file.
 
+## Free online demo (Render)
+
+The repository includes a Render Blueprint and multi-stage `Dockerfile` that build the frontend and serve it from FastAPI on the same origin. To publish it, sign in to Render, choose **New → Blueprint**, connect `Pvinaykumar24/flood_safety_game`, select the `main` branch, and apply the Blueprint. Render will build the service and provide an HTTPS `onrender.com` address; open that address after the deploy is healthy. The health check is `/api/health`.
+
+The free web service sleeps after 15 minutes without requests and may take about a minute to wake. Its filesystem is temporary, and Render may restart it. Game sessions are held in backend memory, so an idle sleep, restart, or redeploy can end an active run; campaign progress is still saved in the player's browser. This setup is intended for a free demo and does not provide persistent multiplayer sessions.
+
 ## Run the game
 
 From the project root:
