@@ -1,0 +1,586 @@
+:root{font-family:'Segoe UI',sans-serif;color:#ecf0e6;background:#10191b;font-synthesis:none;text-rendering:optimizeLegibility;font-optical-sizing:auto}*{box-sizing:border-box}body{margin:0;min-width:320px;min-height:100vh;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,#1b2928 0,#10191b 70%);font-size:12px}button{font:inherit;color:inherit}.topbar{height:66px;display:flex;align-items:center;gap:clamp(10px,1.6vw,27px);padding:0 18px;background:#111d1e;border-bottom:1px solid #344541;box-shadow:0 6px 18px #0003;position:relative;z-index:2}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#eef2e8;letter-spacing:1.4px;font-size:13px;font-weight:750;white-space:nowrap}.brand>b{width:31px;height:31px;display:grid;place-items:center;border:1px solid #a5c47b;color:#d6e5ad;font-size:19px}.brand small,.sim-clock small,.top-metric small,.budget small{display:block;color:#90a39a;font:8px Consolas,monospace;letter-spacing:1px;margin-top:3px}.sim-clock{margin-left:auto;border-left:1px solid #34433e;padding-left:15px;white-space:nowrap}.sim-clock b{display:block;margin-top:3px;color:#f0ddad;font:600 12px Consolas,monospace;letter-spacing:.4px}.weather-warning{display:flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid #78613a;background:#352f21;color:#e6c577;font:9px Consolas,monospace;letter-spacing:.6px;white-space:nowrap}.weather-warning>i{width:7px;height:7px;background:#e1a74f;border-radius:50%;box-shadow:0 0 10px #eeae55}.weather-warning small{display:block;color:#bba673;font-size:7px;margin-top:3px}.warning-live>i{animation:pulse 1.8s infinite}.top-metric,.budget{white-space:nowrap;border-left:1px solid #34433e;padding-left:14px}.top-metric b,.budget b{display:block;margin-top:3px;color:#e6eddc;font:600 13px Consolas,monospace}.top-metric em{font-style:normal;color:#92a79b;font-size:9px}.pause{background:#243631;border:1px solid #587064;color:#dae5ce;padding:8px 12px;font:9px Consolas,monospace;letter-spacing:.5px;cursor:pointer;white-space:nowrap}.pause:hover,.pause.paused{background:#486247;border-color:#afbe7c}.layout{height:calc(100vh - 124px);min-height:0;padding:10px 13px;display:grid;grid-template-columns:minmax(205px,225px) minmax(0,1fr) minmax(245px,275px);gap:12px}.panel{min-height:0;background:linear-gradient(160deg,#1b2927,#151f20 65%);border:1px solid #344640;box-shadow:0 12px 28px #0003;position:relative;padding:13px 13px 12px;overflow:auto;scrollbar-width:thin;scrollbar-color:#46584c #172222}.panel-kicker{font:8px Consolas,monospace;letter-spacing:1px;color:#a9c487;display:flex;justify-content:space-between;gap:5px}.panel-kicker span{color:#7e9589;font-size:7px;text-align:right}.left-panel h2{font:650 17px 'Segoe UI';letter-spacing:.2px;margin:12px 0 7px;color:#f2f0df}.mission-copy{font-size:10px;line-height:1.55;color:#aebeb1;margin:0 0 12px}.objectives{border-top:1px solid #33453d;border-bottom:1px solid #33453d;padding:6px 0;margin-bottom:11px}.objective{display:flex;align-items:center;gap:8px;padding:6px 2px;color:#c4d1c2;font-size:9px}.objective i{width:11px;height:11px;border:1px solid #687d65;display:block;border-radius:50%;flex:none}.objective.complete{color:#a8d0a3}.objective.complete i{background:#88bd7d;border-color:#a5d397;box-shadow:inset 0 0 0 3px #304535}.story-card{border:1px solid #4b5945;background:#222e27;padding:9px 10px;margin-bottom:10px}.card-head{font:8px Consolas,monospace;letter-spacing:.9px;color:#d0b875}.story-card p{font:italic 10px/1.5 'Segoe UI';color:#d6ddc9;margin:8px 0}.text-button{border:0;border-top:1px solid #445343;padding:7px 0 0;width:100%;text-align:left;color:#aaca91;background:none;font:8px Consolas,monospace;letter-spacing:.7px;cursor:pointer}.text-button:hover{color:#e7d292}.meteo-card{border-left:2px solid #6ebbb2;background:#172725;padding:9px 9px 8px;margin-top:9px}.meteo-head{display:flex;justify-content:space-between;color:#91d6c7;font:9px Consolas,monospace;letter-spacing:.4px}.meteo-head i{font-size:7px;color:#dbbd77;font-style:normal}.meteo-card p{font-size:9px;line-height:1.45;color:#b6c8b9;margin:6px 0 0}.panel-stamp{position:absolute;bottom:10px;left:13px;right:13px;border-top:1px solid #34443b;padding-top:8px;color:#769086;font:7px Consolas,monospace;letter-spacing:.5px}.panel-stamp i{width:5px;height:5px;border-radius:50%;background:#80ca93;display:inline-block;margin-right:4px}.city-view{display:flex;flex-direction:column;min-width:0;min-height:0}.city-heading{height:42px;display:flex;align-items:center;justify-content:space-between;flex:none;padding:0 3px 7px}.district-line{color:#a6bf86;font:8px Consolas,monospace;letter-spacing:1px}.city-heading h1{font:650 19px 'Segoe UI';letter-spacing:1.1px;margin:3px 0 0;color:#f2f0df}.city-heading h1 span{color:#d4b768}.grid-readout{text-align:right;color:#e0d6aa;font:11px Consolas,monospace}.grid-readout small{display:block;margin-top:3px;color:#82998b;font-size:7px;letter-spacing:.6px}.map-frame{display:flex;flex:1;flex-direction:column;min-height:0;border:1px solid #697860;background:#152121;box-shadow:0 12px 36px #0005;overflow:hidden}.map-topline{height:27px;flex:none;padding:0 10px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #394b42;color:#d1dfc0;font:8px Consolas,monospace;letter-spacing:.5px}.map-topline #map-status{color:#8ca499;font-size:7px}.map-topline #map-status.online{color:#8dd19d}.map-topline #map-status.offline{color:#ef987d}.cam-help{color:#80948a;font-size:7px}.cam-help b{color:#bcaa72;font-weight:400}.overlay-bar{height:34px;flex:none;display:flex;align-items:center;gap:4px;padding:0 7px;background:#1a2827;border-bottom:1px solid #34463f}.overlay-bar>span{font:7px Consolas,monospace;letter-spacing:.7px;color:#9bb09c;margin:0 4px;white-space:nowrap}.layer-button,.icon-button{height:23px;padding:0 7px;border:1px solid #40524a;background:#23322e;color:#c2d0bd;font:7px Consolas,monospace;letter-spacing:.25px;white-space:nowrap;cursor:pointer;transition:background .15s,border-color .15s,color .15s}.layer-button:hover,.icon-button:hover{border-color:#b8c77c;color:#fff1c4;background:#35453a}.layer-button.active{background:#536340;border-color:#d4c17c;color:#fff0b5;box-shadow:0 0 8px #d4c17c33}.icon-button{width:24px;padding:0;font-size:14px;margin-left:auto}.icon-button+.icon-button{margin-left:0}.icon-button.reset{width:auto;padding:0 7px;font-size:7px}.overlay-bar #zoom-out{margin-left:auto}#game{flex:1;min-height:0;width:100%;position:relative;display:flex;align-items:center;justify-content:center;background:#152121;overflow:hidden;cursor:grab}#game:active{cursor:grabbing}#game canvas{display:block;image-rendering:pixelated}#map-loading{position:absolute;z-index:10;left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid #6a795a;background:#162321ed;padding:11px 15px;color:#e4daa9;font:9px Consolas,monospace;letter-spacing:.6px;text-align:center;pointer-events:none}#map-tooltip{display:none;position:absolute;z-index:12;max-width:225px;padding:6px 8px;background:#101b1bef;border:1px solid #bdba80;box-shadow:0 4px 14px #0009;color:#eff0d8;font:8px Consolas,monospace;letter-spacing:.25px;pointer-events:none;white-space:nowrap}.map-footer{height:29px;flex:none;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 9px;border-top:1px solid #3a4a42;background:#182524}.map-key{display:flex;align-items:center;gap:10px}.map-key span{display:flex;align-items:center;gap:4px;color:#aebcac;font:7px Consolas,monospace;white-space:nowrap}.map-key i{width:11px;height:11px;display:inline-grid;place-items:center;font:7px Consolas,monospace;font-style:normal}.key-river{background:#287386}.key-road{background:#505c61}.key-hospital{background:#a94e4c;color:#fff}.key-school{background:#c58a50;color:#fff}.key-weather{background:#d6bf75;color:#24322d}.key-drain{background:#50605b;color:#fff}.map-footer #map-readout{max-width:43%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#d5c98d;font:7px Consolas,monospace;text-align:right}.geography-note{padding:5px 3px 1px;color:#91a79b;font:8px Consolas,monospace;letter-spacing:.15px}.geography-note b{color:#e5cc86;font-weight:500}.hover-readout{padding:3px 3px 0;color:#6f8a7f;font:7px Consolas,monospace}.right-panel{padding:13px}.selected-card{display:flex;gap:9px;align-items:center;padding:11px 0;border-bottom:1px solid #394b42}.selected-icon{width:32px;height:32px;flex:none;display:grid;place-items:center;background:#354841;border:1px solid #71836c;color:#e3d492;font:700 15px Consolas,monospace}.selected-icon.hospital{background:#963f42;border-color:#d18e77;color:#fff1d2}.selected-icon.school{background:#ac7040;color:#fff0d7}.selected-icon.weather{background:#b69d52;color:#21322c}.selected-icon.drain{background:#52675d;color:#e7eddc}.selected-card h2{font:650 12px 'Segoe UI';margin:0 0 4px;color:#eeeede}.selected-card p{margin:0;color:#8fa399;font:7px Consolas,monospace;letter-spacing:.45px}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#34473f;margin:9px 0 12px;border:1px solid #34473f}.detail-grid>div{background:#1b2927;padding:7px 7px}.detail-grid small{display:block;color:#809489;font:7px Consolas,monospace;letter-spacing:.45px}.detail-grid b{display:block;color:#e4e6d3;margin-top:4px;font:10px Consolas,monospace}.section-title{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #3d4e43;padding-bottom:5px;margin:11px 0 5px;color:#b7cb94;font:7px Consolas,monospace;letter-spacing:.65px}.section-title span{color:#758b80;font-size:6px}.weather-cards{display:grid;grid-template-columns:1fr 1fr;gap:4px}.weather-reading{background:#202e2a;border:1px solid #364941;padding:6px 7px;min-width:0}.weather-reading>b{display:block;color:#c7d8b6;font:7px Consolas,monospace}.weather-reading>span{display:block;color:#f0d38b;font:600 12px Consolas,monospace;margin:4px 0}.weather-reading>span small{font-size:7px;color:#a5b6a5}.weather-reading>small{display:block;color:#84988d;font:6px Consolas,monospace}.weather-placeholder{grid-column:1/-1;color:#81958a;font-size:8px;line-height:1.4;padding:5px 2px}.drainage-details>div{display:flex;justify-content:space-between;padding:4px 1px;border-bottom:1px solid #293b34;color:#9eafa1;font-size:8px}.drainage-details b{color:#dce3d2;font:8px Consolas,monospace}.resources{display:grid;gap:4px}.resource-button{width:100%;display:flex;align-items:center;gap:7px;border:1px solid #3b4e44;background:#202e29;padding:5px 6px;text-align:left;cursor:pointer;transition:background .15s,border-color .15s}.resource-button:hover,.resource-button.selected{border-color:#c8b96f;background:#364034}.resource-button>span{flex:1;color:#d9e1d2;font-size:8px}.resource-button>span small{display:block;color:#8da194;font:6px Consolas,monospace;margin-top:2px}.resource-button>b{color:#e5d195;font:8px Consolas,monospace}.resource-glyph{width:21px;height:21px;display:grid;place-items:center;background:#41544b;color:#b7e2ce;font:12px Consolas,monospace;font-style:normal}.resource-glyph.barrier{color:#f0d17a}.resource-glyph.medical{color:#f29b80}.response-hint{margin-top:6px;color:#7f9788;font:7px/1.4 Consolas,monospace}.mode-dock{height:58px;display:flex;align-items:center;gap:7px;padding:0 17px;background:#111c1d;border-top:1px solid #35453f;box-shadow:0 -5px 18px #0003}.dock-label{color:#788d81;font:8px Consolas,monospace;letter-spacing:.9px;margin-right:5px}.mode-button{height:41px;min-width:148px;display:flex;align-items:center;gap:9px;padding:0 11px;border:1px solid #35473f;background:#192523;text-align:left;cursor:pointer;transition:all .18s}.mode-button:hover{border-color:#849465;background:#28352e}.mode-button.active{border-color:#b1b879;background:#3a4735;box-shadow:inset 0 -2px #d9c578}.mode-button>i{font:16px Consolas,monospace;color:#c7bd7f;font-style:normal}.mode-button span{font:8px Consolas,monospace;letter-spacing:.5px;color:#dbe3d1}.mode-button small{display:block;color:#8da093;font:6px Consolas,monospace;margin-top:3px}.dock-end{margin-left:auto;color:#73897e;font:7px Consolas,monospace;letter-spacing:.6px;white-space:nowrap}@keyframes pulse{50%{box-shadow:0 0 2px #eeae55;opacity:.52}}@media(max-width:1250px){.layout{grid-template-columns:190px minmax(0,1fr) 226px;gap:8px;padding-left:8px;padding-right:8px}.panel{padding:10px}.right-panel{padding:10px}.layer-button{padding:0 5px;font-size:6px}.overlay-bar{gap:3px;padding:0 4px}.overlay-bar>span{margin:0 2px;font-size:6px}.map-key{gap:6px}.map-key span{font-size:6px}.mode-button{min-width:130px}.mode-dock{gap:5px;padding:0 10px}}@media(max-width:1020px){body{overflow:auto}.layout{height:auto;min-height:calc(100vh - 124px);grid-template-columns:minmax(0,1fr) minmax(220px,300px);grid-template-rows:minmax(560px,72vh) auto;overflow:visible}.city-view{grid-column:1/-1;grid-row:1}.left-panel{grid-column:1;grid-row:2;min-height:290px}.right-panel{grid-column:2;grid-row:2;min-height:290px}.mode-dock{position:sticky;bottom:0;z-index:4}.panel-stamp{position:static;margin-top:16px}.map-frame{min-height:450px}.geography-note{margin-top:3px}}@media(max-width:680px){.topbar{height:58px;padding:0 8px;gap:7px}.brand{font-size:10px;gap:6px}.brand>b{width:26px;height:26px;font-size:16px}.brand small{font-size:6px}.sim-clock{padding-left:7px}.sim-clock small,.top-metric small,.budget small{font-size:6px}.sim-clock b{font-size:9px}.weather-warning{padding:5px;font-size:7px;gap:4px}.weather-warning small{font-size:6px}.budget{display:none}.top-metric{padding-left:7px}.top-metric b{font-size:10px}.pause{padding:7px;font-size:7px}.layout{height:auto;min-height:calc(100vh - 116px);display:flex;flex-direction:column;padding:7px;gap:8px}.city-view{min-height:560px}.city-heading{height:41px}.city-heading h1{font-size:15px}.district-line{font-size:6px}.map-frame{min-height:480px}.map-topline{font-size:6px;padding:0 5px}.cam-help{display:none}.overlay-bar{height:auto;min-height:58px;flex-wrap:wrap;justify-content:center;padding:5px 3px}.overlay-bar>span{width:100%;text-align:center}.layer-button{font-size:6px;padding:0 4px}.icon-button{margin:0;width:22px}.overlay-bar #zoom-out{margin-left:0}.map-footer{height:auto;min-height:47px;align-items:flex-start;flex-direction:column;padding:6px}.map-key{flex-wrap:wrap;gap:6px 10px}.map-footer #map-readout{max-width:100%;text-align:left}.left-panel,.right-panel{min-height:0}.panel-stamp{position:static;margin-top:12px}.mode-dock{height:auto;min-height:51px;gap:4px;padding:5px;justify-content:space-around}.dock-label,.dock-end{display:none}.mode-button{min-width:0;width:25%;height:39px;padding:0 5px;gap:4px;justify-content:center}.mode-button>i{font-size:13px}.mode-button span{font-size:6px}.mode-button small{font-size:5px}footer{display:none}}
+
+/* Compact forecasting workbench layered over the city while leaving most of the map visible. */
+.map-frame{position:relative}
+.prediction-lab{position:absolute;z-index:15;right:10px;bottom:37px;width:min(410px,calc(100% - 20px));max-height:calc(100% - 48px);overflow:auto;padding:10px 11px;background:linear-gradient(150deg,#142421f5,#101b1cf7);border:1px solid #91a46c;box-shadow:0 12px 32px #0009;color:#eaf0df;backdrop-filter:blur(7px);animation:lab-in .2s ease-out}
+.prediction-lab[hidden]{display:none}
+.lab-heading{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #455849;padding-bottom:7px}
+.lab-heading span{font:7px Consolas,monospace;letter-spacing:1px;color:#c5cb85}
+.lab-heading h2{margin:3px 0 0;font:600 13px 'Segoe UI';letter-spacing:.3px;color:#f2efd9}
+.lab-heading button{width:24px;height:24px;border:1px solid #526456;background:#23352e;color:#d8e2cf;font:18px Consolas,monospace;cursor:pointer}
+.lab-heading button:hover{border-color:#d2c77f;color:#fff1b7}
+.lab-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.lab-controls label{display:flex;flex-direction:column;gap:4px;color:#9db1a1;font:7px Consolas,monospace;letter-spacing:.35px}
+.lab-controls select{height:25px;padding:0 6px;border:1px solid #43574b;background:#1b2c27;color:#e0e8d8;font:8px Consolas,monospace}
+.lab-chart-wrap{height:142px;width:100%;padding:3px 3px 0;background:#101b1bd9;border:1px solid #34463e}
+.lab-metrics{display:flex;flex-wrap:wrap;justify-content:space-between;gap:5px 9px;padding:7px 2px;border-bottom:1px solid #3d4d42;color:#a5b9a6;font:7px Consolas,monospace;line-height:1.4}
+.lab-metrics b{color:#e5d08c;font-weight:600}
+.lab-correlations{display:grid;grid-template-columns:1fr 1fr;gap:3px 9px;padding:6px 2px;color:#81998b;font:6px Consolas,monospace}
+.lab-correlations span{display:flex;justify-content:space-between;gap:4px;white-space:nowrap}
+.lab-correlations b{color:#c9d397;font-weight:500}
+.forecast-controls{grid-template-columns:1fr 1fr auto;align-items:end}
+.forecast-controls label{gap:6px}
+.forecast-controls label span{color:#e4d18e;font-size:7px}
+.forecast-controls input[type=range]{width:100%;height:12px;margin:0;accent-color:#c7c978}
+.forecast-button{height:27px;padding:0 9px;border:1px solid #a99b60;background:#4a4931;color:#f5edc7;font:8px Consolas,monospace;white-space:nowrap;cursor:pointer}
+.forecast-button:hover{background:#68613a;border-color:#e4d38c}
+.forecast-button:disabled{opacity:.65;cursor:wait}
+.lab-forecast-output{min-height:23px;padding:5px 7px;border-left:2px solid #d2b969;background:#282c22;color:#e7d99c;font:7px/1.5 Consolas,monospace}
+.lab-note{margin:6px 1px 0;color:#83998c;font:7px/1.45 Consolas,monospace}
+@keyframes lab-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:680px){.prediction-lab{right:5px;bottom:53px;width:calc(100% - 10px);max-height:calc(100% - 60px);padding:8px}.lab-chart-wrap{height:132px}.lab-controls{gap:6px}.forecast-controls{grid-template-columns:1fr 1fr}.forecast-button{grid-column:1/-1}}
+.step-button{height:23px;padding:0 8px;border:1px solid #8b9c66;background:#394332;color:#e8e2b8;font:7px Consolas,monospace;letter-spacing:.3px;white-space:nowrap;cursor:pointer;transition:background .15s,border-color .15s}
+.step-button:hover{background:#596341;border-color:#d1ca84;color:#fff1b8}
+.rainfall-control{display:grid;grid-template-columns:auto 1fr;gap:4px 9px;align-items:center;padding:6px 7px;border:1px solid #354a40;background:#1b2926;color:#efdda1;font:9px Consolas,monospace}
+.rainfall-control input{width:100%;margin:0;accent-color:#d2c579}
+.rainfall-control small{grid-column:1/-1;color:#80968a;font:7px Consolas,monospace}
+.rainfall-control span{white-space:nowrap}
+.rainfall-control b{color:#f5e5a9;font-size:11px}
+.pause:disabled{opacity:.62;cursor:wait}
+@media(max-width:680px){.step-button{height:20px;padding:0 4px;font-size:6px}.topbar #new-run,.topbar #reset-game{width:25px;padding:0;font-size:0}.topbar #new-run::before{content:'+';font:14px Consolas,monospace}.topbar #reset-game::before{content:'↺';font:12px Consolas,monospace}.topbar #pause{padding:6px 5px;font-size:6px}}
+.left-panel .panel-stamp{position:static;margin-top:12px}
+.placement-actions{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:6px;padding:6px;border:1px solid #49604f;background:#1a2925}.placement-actions>b{width:100%;color:#d8d497;font:7px Consolas,monospace;letter-spacing:.4px}.placement-actions .forecast-button{height:24px;font-size:7px}.placement-actions .text-button{padding:4px}.barrier-direction{display:flex;justify-content:space-between;align-items:center;margin-top:5px;color:#9bb0a2;font:8px Consolas,monospace}.barrier-direction[hidden]{display:none}.barrier-direction select{background:#1b2c27;border:1px solid #43574b;color:#e0e8d8;padding:4px;font:8px Consolas,monospace}.response-outcome{margin-top:6px;padding:6px;border-left:2px solid #d3bd70;background:#242c23;color:#d8dcae;font:7px/1.5 Consolas,monospace}.risk-mark{margin:6px 0;padding:5px 7px;border:1px solid #596f57;background:#26372e;color:#c8d9aa;font:7px Consolas,monospace;cursor:pointer}.risk-mark:disabled{opacity:.45;cursor:default}
+.weather-warning.severe{border-color:#b85f51;background:#4b2828;color:#ffd3b8;box-shadow:0 0 14px #f0745550;animation:warning-glow 1.3s ease-in-out infinite}.weather-warning.severe>i{background:#f4775d;box-shadow:0 0 12px #f4775d}
+@keyframes warning-glow{50%{box-shadow:0 0 4px #f0745530;filter:saturate(.78)}}
+/* The analytical workbench docks below the map on compact screens so Eastbank stays in view. */
+@media(max-width:1020px){.prediction-lab{position:relative;inset:auto;width:100%;max-width:none;max-height:none;flex:none;overflow:visible;margin:0;animation:lab-in .2s ease-out}.map-frame{overflow:visible}.city-view{min-height:0}#game{min-height:min(58vh,520px);flex:none}.lab-chart-wrap{height:170px}}
+@media(max-width:680px){.prediction-lab{padding:9px}.lab-chart-wrap{height:150px}.lab-controls{grid-template-columns:1fr 1fr}}
+.campaign-stages{display:grid;gap:3px;margin:8px 0;border-top:1px solid #33453d;border-bottom:1px solid #33453d;padding:6px 0}
+.campaign-stage{display:flex;align-items:center;gap:7px;width:100%;height:23px;padding:0 6px;text-align:left;border:1px solid transparent;background:#1b2927;color:#8ea298;font:7px Consolas,monospace;letter-spacing:.45px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.campaign-stage span{width:12px;color:#88b7a4;text-align:center}.campaign-stage:hover:not(:disabled){border-color:#80976b;color:#ecedd3;background:#28372f}.campaign-stage.active{border-color:#9aa56e;background:#394333;color:#f3e4a6}.campaign-stage.complete:not(.active){color:#a3cda2}.campaign-stage:disabled{opacity:.45;cursor:not-allowed}
+.stage-complete-banner{margin-top:5px;padding:6px;border-left:2px solid #a7cf86;background:#26372a;color:#c9e0a7;font:7px Consolas,monospace;letter-spacing:.5px}
+.lab-briefing{margin:6px 0 7px;color:#b8c8b7;font:8px/1.45 'Segoe UI',sans-serif}
+.workbench-live{align-self:center;padding:4px 6px;border:1px solid #536b50;color:#afd49e;background:#1d3029;font:7px Consolas,monospace;letter-spacing:.5px;white-space:nowrap}
+.lab-controls label[hidden],.forecast-controls[hidden],#lab-correlations[hidden]{display:none}
+.lab-controls input[type=range]{width:100%;height:13px;margin:0;accent-color:#c7c978}
+.scenario-actions{display:flex;gap:6px;flex-wrap:wrap;margin:5px 0}
+.scenario-actions .forecast-button{min-height:25px}
+.model-choice{display:flex;gap:5px;width:100%}.model-choice .forecast-button{flex:1;padding:0 5px;font-size:7px}.model-choice .forecast-button.selected{border-color:#d8cb84;background:#59603b;color:#fff0b2}
+.prediction-lab{width:min(470px,calc(100% - 20px))}.lab-chart-wrap{height:155px}.lab-metrics{min-height:25px}
+.campaign-stage:focus-visible,.scenario-actions button:focus-visible,.lab-controls input:focus-visible{outline:2px solid #d8cb84;outline-offset:1px}
+@media(max-width:680px){.prediction-lab{width:calc(100% - 10px)}.lab-chart-wrap{height:138px}.campaign-stages{grid-template-columns:1fr 1fr}.campaign-stage{font-size:6px}.left-panel .panel-stamp{position:static}}
+
+/* City-first shell: the mission brief spans the top; map and one context area sit below. */
+.layout{
+  grid-template-columns:minmax(0, 2.65fr) minmax(290px, 1fr);
+  grid-template-rows:100px minmax(0, 1fr);
+  grid-template-areas:"mission mission" "city context";
+  gap:10px;
+  padding:9px 12px;
+}
+.mission-strip{grid-area:mission;display:grid;grid-template-columns:128px 150px minmax(170px,1fr) auto minmax(250px,1.25fr);align-items:center;gap:10px;padding:9px 13px;overflow:visible;z-index:3}
+.mission-strip .panel-kicker{display:block;line-height:1.5}
+.mission-strip .panel-kicker span{display:block;text-align:left}
+.mission-strip h2{font-size:15px;margin:0;line-height:1.2}
+.mission-strip .mission-copy{font-size:9px;margin:0;max-width:360px}
+.mission-strip .objectives{max-height:78px;overflow:auto;padding:3px 6px;margin:0;border:1px solid #33453d}
+.mission-strip .objective{padding:4px 2px;font-size:8px}
+.mission-list{position:relative;color:#ced8c5;font:8px Consolas,monospace}
+.mission-list summary{cursor:pointer;list-style:none;padding:7px 8px;border:1px solid #43564a;background:#24332d;white-space:nowrap}
+.mission-list summary::-webkit-details-marker{display:none}
+.mission-list summary::after{content:'⌄';margin-left:7px;color:#d3c982}
+.mission-list[open] .campaign-stages{position:absolute;top:100%;right:0;z-index:10;width:200px;max-height:220px;overflow:auto;margin:3px 0;padding:5px;background:#172321;border:1px solid #51644f;box-shadow:0 10px 24px #0009}
+.mission-comms{display:grid;grid-template-columns:1fr 1fr;gap:7px;min-width:0}
+.mission-comms .story-card,.mission-comms .meteo-card{min-width:0;min-height:0;margin:0;padding:7px 8px}
+.mission-comms .story-card p,.mission-comms .meteo-card p{font-size:8px;line-height:1.3;margin:4px 0}
+.mission-comms .text-button{padding-top:4px;font-size:7px}
+.mission-comms .meteo-head{font-size:8px}
+.city-view{grid-area:city}
+.right-panel{grid-area:context;padding:11px;}
+.map-frame{overflow:hidden}
+/* Keep the existing workbench and its controls usable while docking it below the live map. */
+.prediction-lab{position:relative;inset:auto;z-index:1;width:100%;max-width:none;max-height:190px;flex:none;overflow:auto;margin:0;padding:8px 10px;border-width:1px 0 0;box-shadow:none;backdrop-filter:none;animation:none}
+.prediction-lab .lab-heading{margin-bottom:3px}
+.prediction-lab .lab-briefing{margin:3px 0 5px}
+.prediction-lab .lab-chart-wrap{height:105px}
+.prediction-lab .lab-note{margin-top:3px}
+.layout .panel-stamp{display:none}
+@media(max-width:1100px){
+  .layout{grid-template-columns:minmax(0,2.2fr) minmax(270px,1fr);grid-template-rows:auto minmax(0,1fr);}
+  .mission-strip{grid-template-columns:110px 130px minmax(145px,1fr) auto;min-height:100px;}
+  .mission-comms{grid-column:1/-1;grid-template-columns:1fr 1fr;}
+}
+@media(max-width:850px){
+  body{overflow:auto}
+  .layout{height:auto;min-height:calc(100vh - 124px);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(560px,72vh) auto;grid-template-areas:"mission" "city" "context";overflow:visible}
+  .mission-strip{grid-template-columns:110px minmax(130px,.8fr) minmax(180px,1fr);min-height:0;}
+  .mission-list{justify-self:start}
+  .mission-comms{grid-column:1/-1}
+  .city-view{min-height:560px}
+  .right-panel{min-height:260px}
+  .prediction-lab{max-height:260px}
+}
+@media(max-width:680px){
+  .layout{display:flex;flex-direction:column;padding:7px;gap:8px}
+  .mission-strip{display:flex;flex-direction:column;align-items:stretch;gap:7px;padding:9px}
+  .mission-strip .panel-kicker span{display:inline;margin-left:7px}
+  .mission-comms{grid-template-columns:1fr 1fr}
+  .city-view{min-height:560px}
+  .right-panel{min-height:0}
+  .prediction-lab{max-height:260px;padding:8px}
+  .prediction-lab .lab-chart-wrap{height:120px}
+}
+
+/* Focused simulation shell and contextual drawer. */
+:root{color:#e9f0e4;background:#111b19}
+body{background:radial-gradient(ellipse at 45% 35%,#20302a 0,#111b19 72%);font-size:14px}
+.topbar{height:64px;gap:clamp(8px,1.2vw,18px);padding:0 20px;background:#101a18;border-bottom-color:#2c4036;box-shadow:0 5px 22px #0004}
+.brand{font-size:14px;letter-spacing:1.2px}
+.brand>b{width:34px;height:34px;border-radius:7px 2px 7px 2px;background:linear-gradient(145deg,#304b3d,#1c3028);font-size:19px}
+.brand small{font-size:8px}
+.top-mission{min-width:125px;padding-left:13px;border-left:1px solid #32483d}
+.top-mission small{display:block;color:#8fa694;font:8px Consolas,monospace;letter-spacing:.8px}
+.top-mission b{display:block;margin-top:4px;color:#e2e9d7;font:600 10px Consolas,monospace;letter-spacing:.25px}
+.sim-clock{margin-left:auto;padding-left:13px}
+.sim-clock small,.top-metric small,.budget small{font-size:8px}
+.sim-clock b{font-size:12px}
+.weather-warning{border-radius:5px;padding:6px 9px;font-size:9px}
+.top-metric,.budget{padding-left:10px}
+.top-metric b,.budget b{font-size:12px}
+.top-icon-button{width:32px;height:32px;border:1px solid #40584b;border-radius:5px;background:#1e3028;color:#d3e1d0;font-size:18px;cursor:pointer;transition:background .16s,border-color .16s,transform .16s}
+.top-icon-button:hover{background:#304b3b;border-color:#91ac7c;transform:translateY(-1px)}
+.pause{border-radius:5px;padding:8px 11px;font-size:9px}
+.layout{height:calc(100vh - 128px);grid-template-columns:minmax(0,1fr);grid-template-rows:104px minmax(0,1fr);grid-template-areas:"mission" "city";gap:10px;padding:10px 14px}
+.layout.has-context{grid-template-columns:minmax(0,3fr) minmax(310px,1fr);grid-template-areas:"mission mission" "city context"}
+.mission-strip{grid-area:mission;grid-template-columns:minmax(270px,1.2fr) minmax(190px,.82fr) minmax(310px,1.2fr);gap:18px;padding:11px 16px;border:1px solid #31473b;border-radius:8px;background:linear-gradient(110deg,#1b2a22,#17231f 65%,#1c2a24);box-shadow:0 7px 20px #0002;overflow:visible}
+.mission-title-block{min-width:0}
+.mission-kicker{color:#a8c78b;font:9px Consolas,monospace;letter-spacing:1px}
+.mission-kicker b{margin-left:5px;color:#e4d18e;font-weight:600}
+.mission-strip h1{font-size:20px;line-height:1.15;letter-spacing:.25px;margin:5px 0 4px;color:#f0f1df}
+.mission-copy{max-width:520px;margin:0;color:#b3c2b3;font-size:11px;line-height:1.35}
+.mission-progress-block{min-width:0;align-self:center}
+.mission-progress-label{display:flex;justify-content:space-between;align-items:center;gap:8px;color:#91a69a;font:8px Consolas,monospace;letter-spacing:.5px}
+.mission-list summary{border-radius:4px;padding:6px 8px;font-size:8px}
+.mission-strip progress{display:block;width:100%;height:6px;margin:7px 0 4px;accent-color:#9fc781;border:0;border-radius:6px;overflow:hidden}
+.mission-strip progress::-webkit-progress-bar{background:#2a3c32;border-radius:6px}
+.mission-strip progress::-webkit-progress-value{background:linear-gradient(90deg,#70b98c,#d5c975);border-radius:6px;transition:width .25s}
+.mission-strip .objectives{max-height:32px;overflow:hidden;padding:0 2px;margin:0;border:0;background:transparent}
+.mission-strip .objective{padding:2px 0;color:#c3d0bd;font-size:9px}
+.mission-strip .objective i{width:9px;height:9px}
+.mission-strip .stage-complete-banner{margin:0;padding:2px 0;background:none;border:0;color:#a8d394;font-size:8px}
+.mission-strip .meteo-card{align-self:stretch;display:flex;flex-direction:column;justify-content:center;min-width:0;margin:0;padding:7px 10px;border:0;border-left:2px solid #68bbaa;border-radius:0 5px 5px 0;background:#172823}
+.mission-strip .meteo-head{font-size:9px}
+.mission-strip .meteo-card p{margin:4px 0;font-size:10px;line-height:1.3;color:#c1d1c2}
+.mission-strip .guide-task{color:#e5d797!important;font-weight:600}
+.guide-actions{display:flex;align-items:center;gap:10px;margin-top:2px}
+.guide-action{border:0;border-radius:4px;background:#d2ce8b;color:#263529;padding:6px 9px;font:700 8px Consolas,monospace;letter-spacing:.35px;cursor:pointer;transition:filter .15s,transform .15s}
+.guide-action:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.mission-comms{display:none}
+.city-view{grid-area:city;min-height:0}
+.city-heading{height:40px;padding:0 4px 5px}
+.district-line{font-size:9px;letter-spacing:.8px}
+.city-heading h1{font-size:19px;letter-spacing:.6px}
+.map-frame{border:1px solid #425b4c;border-radius:8px;box-shadow:0 12px 34px #0005}
+.map-topline{height:32px;padding:0 12px;font-size:9px;background:#192720}
+.map-topline #map-status{font-size:8px}
+.overlay-bar{height:38px;gap:6px;padding:0 10px;background:#18251f}
+.overlay-bar>span{font-size:8px}
+.layer-button,.icon-button{height:27px;border-radius:4px;padding:0 9px;font-size:8px}
+.step-button{height:27px;border-radius:4px;padding:0 10px;font-size:8px}
+.icon-button{width:28px}
+.icon-button.reset{width:auto;font-size:8px}
+.map-footer{height:34px;padding:0 12px;background:#18251f}
+.map-key{gap:12px}
+.map-key span{font-size:8px}
+.map-key i{width:13px;height:13px}
+.map-footer #map-readout{font-size:8px}
+.geography-note{padding-top:5px;font-size:9px}
+.hover-readout{font-size:8px}
+.context-panel{grid-area:context;min-width:0;height:100%;padding:13px;border:1px solid #354d40;border-radius:8px;background:linear-gradient(160deg,#1b2a23,#141f1b 75%);box-shadow:0 10px 30px #0004;overflow:auto;scrollbar-color:#496253 #18231e;animation:context-slide .2s ease-out}
+.context-panel[hidden]{display:none}
+.context-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:1px solid #35483b;margin-bottom:10px}
+.context-heading span{color:#a6c388;font:8px Consolas,monospace;letter-spacing:.8px}
+.context-heading h2{font-size:17px;line-height:1.2;margin:4px 0 0;color:#f0f1df}
+.close-context{width:29px;height:29px;border:1px solid #42584a;border-radius:5px;background:#213128;color:#c4d2c2;font-size:20px;line-height:1;cursor:pointer}
+.close-context:hover{background:#354a3b;border-color:#9eb584}
+.context-section[hidden]{display:none}
+.context-copy{margin:3px 0 9px;color:#b8c7b8;font-size:11px;line-height:1.4}
+.context-primary{width:100%;min-height:34px;margin:4px 0 8px;padding:0 10px;border:1px solid #a9b47a;border-radius:5px;background:#394531;color:#f2edc5;font:700 9px Consolas,monospace;cursor:pointer}
+.context-primary:hover{background:#4c5d3c}
+.selected-card{padding:7px 0 10px;gap:10px}
+.selected-icon{width:36px;height:36px;border-radius:6px}
+.selected-card h3{font-size:14px;margin:0 0 4px;color:#edf0e2}
+.selected-card p{font:9px/1.4 Consolas,monospace;color:#9bad9f}
+.detail-grid{margin:9px 0;border-radius:6px;overflow:hidden}
+.detail-grid>div{padding:8px}
+.detail-grid small{font-size:8px}
+.detail-grid b{font-size:11px}
+.section-title{font-size:9px;letter-spacing:.4px;margin:13px 0 6px;padding-bottom:6px}
+.section-title span{font-size:7px}
+.weather-cards{gap:6px}
+.weather-reading{border-radius:5px;padding:8px}
+.weather-reading>b{font-size:8px}
+.weather-reading>span{font-size:14px}
+.weather-reading>small{font-size:7px}
+.weather-placeholder{font-size:10px}
+.drainage-details>div{padding:6px 1px;font-size:10px}
+.drainage-details b{font-size:9px}
+.resources{gap:7px}
+.resource-button{border-radius:6px;padding:8px}
+.resource-button>span{font-size:10px}
+.resource-button>span small{font-size:8px}
+.resource-button>b{font-size:10px}
+.resource-glyph{width:28px;height:28px;border-radius:5px}
+.placement-actions{gap:7px;border-radius:6px;padding:9px}
+.placement-actions>b{font-size:9px}
+.placement-actions .forecast-button{height:32px;font-size:8px}
+.placement-actions .text-button{width:auto;padding:6px}
+.response-hint{font:10px/1.45 'Segoe UI',sans-serif;color:#a5b6a7}
+.response-outcome{border-radius:4px;padding:8px;font:9px/1.5 Consolas,monospace}
+.risk-mark{font-size:8px;border-radius:4px;padding:7px}
+.prediction-lab{position:static;inset:auto;width:100%;max-height:none;max-width:none;overflow:visible;margin:0;padding:0;background:transparent;border:0;box-shadow:none;backdrop-filter:none;animation:none}
+.lab-heading h3{font-size:15px;margin:4px 0 0}
+.lab-heading>div>span{font-size:8px}
+.lab-briefing{font-size:11px;line-height:1.4;margin:8px 0}
+.lab-controls{gap:8px;margin:8px 0}
+.lab-controls label{font:8px Consolas,monospace;gap:5px}
+.lab-controls select{min-height:29px;border-radius:4px;font-size:10px}
+.lab-chart-wrap{height:190px;border-radius:6px;padding:6px}
+.lab-metrics{font:9px/1.5 Consolas,monospace;padding:8px 2px}
+.lab-correlations{font:8px Consolas,monospace;grid-template-columns:1fr;gap:5px}
+.scenario-actions{gap:7px;margin:8px 0}
+.forecast-button{min-height:32px;border-radius:5px;font:8px Consolas,monospace}
+.lab-forecast-output{min-height:30px;border-radius:4px;padding:7px 9px;font:9px/1.5 Consolas,monospace}
+.lab-note{font:9px/1.45 'Segoe UI',sans-serif}
+.mode-dock{height:64px;justify-content:center;gap:8px;padding:0 15px;background:#101a18;border-top-color:#304237;box-shadow:0 -5px 18px #0002}
+.mode-button{min-width:0;width:min(210px,22vw);height:42px;justify-content:center;gap:8px;border:1px solid transparent;border-radius:7px;background:transparent;padding:0 12px}
+.mode-button>i{font-size:17px}
+.mode-button span{font:600 10px Consolas,monospace;letter-spacing:.3px}
+.mode-button.active{border-color:#647b5d;background:#283b2e;box-shadow:inset 0 -2px #bdc77e}
+.mode-button:disabled{opacity:.38;cursor:not-allowed}
+.mode-toggle{height:28px;padding:0 8px;border:1px solid #455b4c;border-radius:4px;background:#1a2a22;color:#cbd7c6;font:8px Consolas,monospace;white-space:nowrap;cursor:pointer}
+.mode-toggle:hover{border-color:#a6bd7a}
+.mode-button[hidden]{display:none}
+@keyframes context-slide{from{opacity:0;transform:translateX(8px)}to{opacity:1;transform:translateX(0)}}
+@media(max-width:1250px){
+  .layout.has-context{grid-template-columns:minmax(0,2.35fr) minmax(290px,1fr)}
+  .mission-strip{gap:10px}
+  .top-mission{min-width:100px}
+  .brand small{font-size:7px}
+  .mode-button{width:190px}
+}
+@media(max-width:1100px){
+  body{overflow:auto}
+  .layout,.layout.has-context{height:auto;min-height:calc(100vh - 128px);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(500px,68vh) auto;grid-template-areas:"mission" "city" "context";overflow:visible}
+  .mission-strip{grid-template-columns:minmax(220px,1fr) minmax(180px,.75fr) minmax(260px,1fr);min-height:104px}
+  .context-panel{height:auto;max-height:520px}
+  .city-view{min-height:500px}
+  .mode-dock{position:sticky;bottom:0;z-index:4}
+}
+@media(max-width:760px){
+  .topbar{height:auto;min-height:58px;padding:6px 9px;gap:6px;flex-wrap:wrap}
+  .brand{font-size:11px;gap:6px}
+  .brand>b{width:28px;height:28px}
+  .top-mission{display:none}
+  .sim-clock{margin-left:auto;padding-left:7px}
+  .sim-clock small,.top-metric small,.budget small{font-size:6px}
+  .sim-clock b,.top-metric b,.budget b{font-size:9px}
+  .weather-warning{font-size:7px;padding:5px}
+  .weather-warning small{font-size:6px}
+  .top-metric,.budget{padding-left:6px}
+  .top-icon-button{width:27px;height:27px}
+  .pause{padding:6px;font-size:7px}
+  .layout,.layout.has-context{display:flex;flex-direction:column;padding:7px;gap:8px}
+  .mission-strip{display:grid;grid-template-columns:1fr;gap:8px;padding:10px}
+  .mission-strip h1{font-size:17px}
+  .mission-progress-block{width:100%}
+  .mission-strip .meteo-card{padding:8px}
+  .mission-list[open] .campaign-stages{left:0;right:auto}
+  .city-view{min-height:510px}
+  .city-heading{height:36px}
+  .city-heading h1{font-size:15px}
+  .district-line{font-size:7px}
+  .map-frame{min-height:450px}
+  .map-topline{padding:0 6px;font-size:7px}
+  .cam-help{display:none}
+  .overlay-bar{height:auto;min-height:62px;flex-wrap:wrap;justify-content:center;padding:5px 3px}
+  .overlay-bar>span{width:100%;text-align:center}
+  .layer-button{font-size:6px;padding:0 5px}
+  .icon-button{margin:0;width:23px}
+  .overlay-bar #zoom-out{margin-left:0}
+  .map-footer{height:auto;min-height:48px;align-items:flex-start;flex-direction:column;padding:6px}
+  .map-key{flex-wrap:wrap;gap:6px 9px}
+  .map-key span{font-size:6px}
+  .map-footer #map-readout{max-width:100%;text-align:left}
+  .mode-dock{height:auto;min-height:54px;gap:2px;padding:4px;justify-content:space-around}
+  .mode-button{width:auto;flex:1;height:42px;padding:0 3px;gap:3px}
+  .mode-button>i{font-size:13px}
+  .mode-button span{font-size:6px;line-height:1.2;text-align:center}
+  .context-panel{max-height:none;padding:10px}
+  .lab-chart-wrap{height:160px}
+}
+
+/* Reusable guided tutorial spotlight and contextual instruction card. */
+.guided-tutorial-layer{position:fixed;inset:0;z-index:10000;pointer-events:none}
+.guided-tutorial-layer[hidden]{display:none}
+.tutorial-spotlight{position:fixed;display:none;border:2px solid #d8e89a;border-radius:9px;box-shadow:0 0 0 9999px rgba(4,11,9,.58),0 0 18px 5px rgba(183,224,144,.72),inset 0 0 16px rgba(232,243,174,.18);pointer-events:none;animation:tutorial-pulse 1.4s ease-in-out infinite}
+.guided-tutorial-layer.tutorial-action-complete .tutorial-spotlight{box-shadow:0 0 0 9999px rgba(4,11,9,.32),0 0 18px 5px rgba(183,224,144,.72),inset 0 0 16px rgba(232,243,174,.18)}
+.tutorial-bubble{position:fixed;width:min(340px,calc(100vw - 24px));padding:14px 15px 12px;border:1px solid #8c9f69;border-radius:9px;background:linear-gradient(145deg,#20332a,#14221e);box-shadow:0 14px 42px #000b;color:#edf1e2;pointer-events:auto;animation:tutorial-pop .18s ease-out}
+.tutorial-bubble-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tutorial-counter{color:#c8d58a;font:700 9px Consolas,monospace;letter-spacing:.7px}
+.tutorial-skip{border:0;background:transparent;color:#9aab9e;font:8px Consolas,monospace;cursor:pointer}
+.tutorial-skip:hover{color:#f0d698}
+.tutorial-bubble h2{margin:9px 0 5px;font-size:16px;line-height:1.2;color:#f1f0db}
+.tutorial-explanation{margin:0;color:#bdcbbd;font-size:12px;line-height:1.45}
+.tutorial-feedback{margin:9px 0 0;padding:8px 9px;border-left:2px solid #a6cf8a;border-radius:0 4px 4px 0;background:#26382c;color:#d8ebc4;font-size:11px;line-height:1.4}
+.tutorial-hint{margin:9px 0 0;padding:8px 9px;border-left:2px solid #d2bd70;background:#302e21;color:#f0dca2;font-size:11px;line-height:1.4}
+.tutorial-controls{display:flex;align-items:center;gap:7px;margin-top:12px;padding-top:10px;border-top:1px solid #3c5142}
+.tutorial-controls button{min-height:31px;padding:0 10px;border:1px solid #52694f;border-radius:5px;background:#203128;color:#d9e4d0;font:700 8px Consolas,monospace;cursor:pointer}
+.tutorial-controls .tutorial-next{margin-left:auto;border-color:#c7c77f;background:#d0ce8c;color:#26342a}
+.tutorial-controls button:hover:not(:disabled){filter:brightness(1.14)}
+.tutorial-controls button:disabled{opacity:.38;cursor:not-allowed}
+.guided-tutorial-target{position:relative!important;z-index:10001!important;outline:3px solid #e6ed9e!important;outline-offset:3px!important;box-shadow:0 0 0 7px #d7e58a33,0 0 20px #d7edab!important;animation:tutorial-control-pulse 1.3s ease-in-out infinite}
+.guide-actions .tutorial-replay{border:0;background:transparent;color:#9eaf9c;font:7px Consolas,monospace;letter-spacing:.3px;padding:3px;cursor:pointer;white-space:nowrap}
+.guide-actions .tutorial-replay:hover{color:#efe1a3}
+.guide-actions .tutorial-replay[hidden]{display:none}
+@keyframes tutorial-pulse{50%{filter:brightness(1.26);transform:scale(1.012)}}
+@keyframes tutorial-control-pulse{50%{outline-color:#fff2a5;box-shadow:0 0 0 9px #d7e58a22,0 0 24px #d7edab}}
+@keyframes tutorial-pop{from{opacity:0;transform:translateY(4px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:760px){
+  .tutorial-bubble{padding:11px 12px 10px}
+  .tutorial-bubble h2{font-size:14px}
+  .tutorial-explanation,.tutorial-feedback,.tutorial-hint{font-size:10px}
+  .tutorial-controls button{min-height:29px;padding:0 7px;font-size:7px}
+}
+
+/* Progressive disclosure: the guided mission exposes one experiment at a time. */
+.station-current-readings{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0;padding:9px;background:#202f2a;border:1px solid #40564a;border-radius:6px}
+.station-current-readings[hidden]{display:none}
+.station-current-readings>div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.station-current-readings small{color:#8ea598;font:7px Consolas,monospace;letter-spacing:.55px}
+.station-current-readings b{color:#e6e9d8;font:600 11px Consolas,monospace;overflow-wrap:anywhere}
+.mission1-trend-action{margin-top:8px}
+.trend-interpretation{padding:8px 9px;border-left:2px solid #d4c277;background:#262d25;color:#dce6cf;font-size:10px;line-height:1.45}
+.mission-complete-summary{padding:14px 12px;border:1px solid #68794e;border-radius:8px;background:linear-gradient(145deg,#26352a,#1a2723);animation:lab-in .18s ease-out}
+.mission-complete-summary[hidden]{display:none}
+.summary-kicker{color:#c4d28a;font:8px Consolas,monospace;letter-spacing:.8px}
+.mission-complete-summary h3{margin:7px 0;color:#f1efdb;font-size:17px}
+.mission-complete-summary p{color:#bdcbb9;font-size:11px;line-height:1.5}
+.summary-reward{display:flex;justify-content:space-between;align-items:center;margin:12px 0;padding:9px;border-radius:5px;background:#17221f;color:#9aad9d;font:8px Consolas,monospace}
+.summary-reward b{color:#f0d68a;font-size:15px}
+.mission-complete-summary .context-primary{width:100%;min-height:36px}
+#lab-chart-wrap[hidden],#lab-metrics[hidden],#lab-note[hidden],#forecast-controls[hidden],#window-control[hidden],#lab-forecast-output[hidden],#lab-correlations[hidden]{display:none}
+.context-primary[hidden],.scenario-actions[hidden],#mission1-trend-action[hidden],#trend-interpretation[hidden]{display:none}
+body[data-tutorial-mission="first-drop"] #prediction-lab>.lab-controls:not(.forecast-controls)>label:first-child{display:none}
+body[data-tutorial-mission="first-drop"] #context-weather>.context-copy,
+body[data-tutorial-mission="first-drop"] #context-weather>.section-title,
+body[data-tutorial-mission="first-drop"] #context-weather>.rainfall-control,
+body[data-tutorial-mission="first-drop"] #context-weather>.weather-cards{display:none}
+body[data-tutorial-mission="first-drop"][data-tutorial-step="mission-introduction"] #context-panel,
+body[data-tutorial-mission="first-drop"][data-tutorial-step="mission-introduction"] .mode-dock{display:none!important}
+body[data-tutorial-mission="first-drop"][data-tutorial-step="mission-introduction"] .mission-list{display:none}
+body[data-tutorial-mission="first-drop"][data-tutorial-step="inspect-southern-station"] .mode-dock,
+body[data-tutorial-mission="first-drop"][data-tutorial-step="inspect-six-hour-record"] .mode-dock,
+body[data-tutorial-mission="first-drop"][data-tutorial-step="calculate-six-hour-average"] .mode-dock,
+body[data-tutorial-mission="first-drop"][data-tutorial-step="discover-rainfall-trend"] .mode-dock,
+body[data-tutorial-mission="first-drop"][data-tutorial-step="complete-first-drop"] .mode-dock{display:none!important}
+body[data-tutorial-mission="first-drop"][data-tutorial-step="inspect-six-hour-record"] #context-weather>.section-title,
+body[data-tutorial-mission="first-drop"][data-tutorial-step="calculate-six-hour-average"] #context-weather,
+body[data-tutorial-mission="first-drop"][data-tutorial-step="discover-rainfall-trend"] #context-weather{display:none}
+body[data-tutorial-mission="first-drop"][data-tutorial-step="complete-first-drop"] #context-weather,
+body[data-tutorial-mission="first-drop"][data-tutorial-step="complete-first-drop"] #lab-chart-wrap,
+body[data-tutorial-mission="first-drop"][data-tutorial-step="complete-first-drop"] #lab-metrics,
+body[data-tutorial-mission="first-drop"][data-tutorial-step="complete-first-drop"] #lab-note,
+body[data-tutorial-mission="first-drop"][data-tutorial-step="complete-first-drop"] #lab-forecast-output{display:none!important}
+body[data-tutorial-mission="first-drop"][data-tutorial-step="complete-first-drop"] #context-panel{overflow-y:auto}
+body[data-tutorial-mission="first-drop"][data-tutorial-step="calculate-six-hour-average"] #weather-history-button,
+body[data-tutorial-mission="first-drop"][data-tutorial-step="discover-rainfall-trend"] #weather-history-button{display:none}
+body[data-tutorial-mission="first-drop"] #lab-correlations{display:none}
+body[data-tutorial-mission="hidden-pattern"] #prediction-lab>.lab-controls:not(.forecast-controls)>label:first-child,
+body[data-tutorial-mission="predict-flood"] #prediction-lab>.lab-controls:not(.forecast-controls)>label:first-child,
+body[data-tutorial-mission="prediction-failure"] #prediction-lab>.lab-controls:not(.forecast-controls)>label:first-child{display:none}
+body[data-tutorial-mission="hidden-pattern"] #lab-forecast-output,
+body[data-tutorial-mission="predict-flood"] #lab-forecast-output,
+body[data-tutorial-mission="prediction-failure"] #lab-correlations{display:none}
+body[data-tutorial-mission="save-novara"] #context-response .resources{transition:opacity .16s ease}
+body[data-tutorial-mission="save-novara"][data-tutorial-step="mission-introduction"] #context-response .resources-title,
+body[data-tutorial-mission="save-novara"][data-tutorial-step="mission-introduction"] #context-response .resources,
+body[data-tutorial-mission="save-novara"][data-tutorial-step="mission-introduction"] #barrier-direction-wrap,
+body[data-tutorial-mission="save-novara"][data-tutorial-step="mission-introduction"] .placement-actions,
+body[data-tutorial-mission="save-novara"][data-tutorial-step="mission-introduction"] .response-hint,
+body[data-tutorial-mission="save-novara"][data-tutorial-step="mission-introduction"] .response-outcome,
+body[data-tutorial-mission="save-novara"][data-tutorial-step="reveal-response-resources"] #barrier-direction-wrap,
+body[data-tutorial-mission="save-novara"][data-tutorial-step="reveal-response-resources"] .placement-actions,
+body[data-tutorial-mission="save-novara"][data-tutorial-step="reveal-response-resources"] .response-hint,
+body[data-tutorial-mission="save-novara"][data-tutorial-step="reveal-response-resources"] .response-outcome{display:none!important}
+@media(max-width:1100px){
+  body[data-tutorial-mission="first-drop"][data-tutorial-step="mission-introduction"] .layout{grid-template-rows:minmax(500px,1fr)}
+ .mission-complete-summary{margin-top:6px}
+}
+
+/* Keep the city as the dominant play surface and reserve one contextual sidebar. */
+@media(min-width:1101px){
+  .layout:not(.has-context){grid-template-columns:minmax(0,7fr) minmax(300px,3fr);grid-template-rows:minmax(0,1fr);grid-template-areas:"city mission"}
+  .layout.has-context{grid-template-columns:minmax(0,7fr) minmax(300px,3fr);grid-template-rows:minmax(0,1fr);grid-template-areas:"city context"}
+  body[data-tutorial-mission="first-drop"] .layout{height:calc(100vh - 64px);padding-bottom:4px}
+  .mission-strip{display:flex;grid-area:mission;flex-direction:column;align-items:stretch;gap:14px;height:100%;padding:17px 16px;overflow-y:auto}
+  .mission-strip .mission-title-block{flex:none}
+  .mission-strip .mission-progress-block{flex:none;width:100%}
+  .mission-strip .objectives{max-height:100px}
+  .mission-strip .meteo-card{flex:none;width:100%;align-self:stretch;margin-top:0;padding:11px 12px}
+  .mission-strip .meteo-card p{font-size:11px;line-height:1.45}
+  .layout.has-context .mission-strip{display:none}
+  body[data-tutorial-mission="first-drop"][data-tutorial-step="mission-introduction"] .layout.has-context{grid-template-areas:"city mission"}
+  body[data-tutorial-mission="first-drop"][data-tutorial-step="mission-introduction"] .layout.has-context .mission-strip{display:flex}
+  .context-panel{grid-area:context;height:100%;min-width:0}
+  .city-view{grid-area:city;min-width:0}
+  .city-heading{height:36px}
+  .geography-note{font-size:8px;line-height:1.3}
+  .hover-readout{min-height:12px}
+}
+@media(max-width:1100px){
+  .layout,.layout.has-context{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(600px,82vh) auto;grid-template-areas:"mission" "city" "context"}
+  .city-view{min-height:600px}
+  #game{min-height:min(65vh,620px);flex:none}
+}
+
+/* Desktop city-first framing: use the full left column for the complete 4:3 map.
+   HUD controls sit on translucent map edges; the right 30% stays mission/context space. */
+@media (min-width:1101px) {
+  .layout,
+  .layout.has-context {
+    height: calc(100vh - 66px);
+    min-height: 0;
+    padding: 0;
+    gap: 0;
+    grid-template-columns: minmax(0, 7fr) minmax(300px, 3fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .layout .city-view {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .layout .city-heading,
+  .layout .geography-note,
+  .layout .hover-readout {
+    display: none;
+  }
+
+  .layout .map-frame {
+    position: absolute;
+    inset: 0;
+    display: block;
+    min-height: 0;
+  }
+
+  .layout .map-topline,
+  .layout .overlay-bar,
+  .layout .map-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    backdrop-filter: blur(3px);
+  }
+
+  .layout .map-topline {
+    top: 0;
+    background: rgba(21, 33, 33, .88);
+  }
+
+  .layout .overlay-bar {
+    top: 27px;
+    background: rgba(26, 40, 39, .88);
+  }
+
+  .layout #game {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .layout .map-footer {
+    bottom: 0;
+    background: rgba(24, 37, 36, .88);
+  }
+
+  .layout:not(.has-context) .mission-strip,
+  .layout.has-context .context-panel {
+    align-self: start;
+    height: calc(100% - 58px);
+    min-height: 0;
+    border-radius: 0;
+  }
+
+  .mode-dock {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    width: 30vw;
+    height: 58px;
+    padding: 0 8px;
+    gap: 4px;
+    justify-content: space-between;
+  }
+
+  .mode-dock .dock-label,
+  .mode-dock .dock-end {
+    display: none;
+  }
+
+  .mode-dock .mode-button {
+    min-width: 0;
+    flex: 1 1 0;
+    height: 43px;
+    justify-content: center;
+    gap: 4px;
+    padding: 0 4px;
+  }
+
+  .mode-dock .mode-button span {
+    font-size: 7px;
+  }
+}
+.mission-strip .scenario-actions{display:flex;flex-direction:column;gap:6px;margin:7px 0 0}
+.mission-strip .scenario-actions .forecast-button{width:100%;min-height:34px;white-space:normal;line-height:1.3}
+.context-panel>.scenario-actions:not(:empty){display:flex;flex-direction:column;gap:7px;margin:0 0 9px}
+.context-panel>.scenario-actions .forecast-button{width:100%;min-height:36px;white-space:normal;line-height:1.3}
+.scenario-actions:empty{display:none}
+.tutorial-spotlight{box-shadow:0 0 0 9999px rgba(4,11,9,.43),0 0 18px 5px rgba(183,224,144,.72),inset 0 0 16px rgba(232,243,174,.18)}
+
+/* Readability pass: use comfortable sizes for game copy and make results easy to scan. */
+@media (min-width:761px) {
+  body{font-size:15px}
+  .mission-copy,.mission-strip .meteo-card p,.context-copy,.lab-briefing,.mission-complete-summary p{font-size:14px;line-height:1.55}
+  .mission-strip .objective,.meteo-card .meteo-head,.context-heading>div>span,.section-title,.weather-reading>b,.weather-reading>small,.detail-grid small{font-size:11px}
+  .lab-chart-wrap{height:300px}
+  .lab-metrics{font:12px/1.6 Consolas,monospace}
+  .response-outcome{font:14px/1.55 'Segoe UI',sans-serif;padding:14px;border-radius:8px;background:#1d332a;border:1px solid #718d63;color:#f0edce}
+  .graph-expand-button{display:block;margin:8px 0 12px auto;min-height:36px;padding:0 14px;border:1px solid #7f9565;border-radius:5px;background:#304633;color:#e8edcd;font:600 12px Consolas,monospace;cursor:pointer}
+  .graph-expand-button[hidden]{display:none!important}
+  .graph-expand-button:hover{background:#46613e}
+  .graph-dialog{width:min(1100px,92vw);max-width:none;max-height:92vh;overflow:auto;padding:20px;border:1px solid #789367;border-radius:12px;background:#16231f;color:#edf0df;box-shadow:0 20px 90px #000c}
+  .graph-dialog::backdrop{background:#07100ed9;backdrop-filter:blur(4px)}
+  .graph-dialog>header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .graph-dialog>header small{color:#aed08b;font:12px Consolas,monospace;letter-spacing:1px}
+  .graph-dialog h2{margin:6px 0;font-size:24px}
+  .graph-dialog p{font-size:14px;color:#c6d0bd}
+  .graph-dialog>button,.graph-dialog header button{min-height:40px;padding:0 14px;border:1px solid #5f765d;border-radius:5px;background:#263a30;color:#e6ebd9;font:600 12px Consolas,monospace;cursor:pointer}
+  .graph-dialog .lab-chart-wrap{height:min(62vh,620px);width:100%;padding:14px;border-radius:8px;background:#101a18}
+  .graph-dialog #regression-chart{width:100%!important;height:100%!important}
+}
+@media(max-width:760px){.lab-chart-wrap{height:230px}.response-outcome{font-size:13px;line-height:1.5}}
+
+.briefing-dialog{width:min(620px,calc(100vw - 32px));max-width:none;padding:28px;border:1px solid #809668;border-radius:12px;background:linear-gradient(150deg,#1e3027,#111d1b);color:#f1f0dc;box-shadow:0 25px 100px #000d}
+.briefing-dialog::backdrop{background:#06100edb;backdrop-filter:blur(5px)}
+.briefing-dialog[data-kind="warning"]{border-color:#dfae58;box-shadow:0 0 0 1px #dfae5844,0 25px 100px #000d}
+.briefing-dialog .briefing-kicker{color:#b8d68f;font:12px Consolas,monospace;letter-spacing:1.4px}
+.briefing-dialog[data-kind="warning"] .briefing-kicker{color:#efc76d}
+.briefing-dialog h2{margin:12px 0;font-size:clamp(24px,3vw,34px);line-height:1.15}
+.briefing-dialog p{margin:0 0 22px;color:#d1ddce;font-size:clamp(16px,1.4vw,19px);line-height:1.6}
+.briefing-dialog button{min-height:46px;padding:0 20px;border:1px solid #859a6b;border-radius:6px;background:#354a36;color:#f4f0d5;font:700 13px Consolas,monospace;cursor:pointer}
+@media(min-width:761px){
+  .mission-copy,.mission-strip .meteo-card p,.context-copy,.lab-briefing,.mission-complete-summary p{font-size:15px;line-height:1.6}
+  .mission-strip .objective,.objective,.response-hint,.trend-interpretation,.lab-note{font-size:13px;line-height:1.5}
+  .layer-button,.icon-button,.step-button,.mode-button span,.mission-list summary{font-size:11px}
+  .lab-controls label,.lab-controls select,.forecast-button,.context-primary{font-size:13px}
+  .selected-card h3{font-size:16px}.detail-grid b,.weather-reading>b,.drainage-details>div,.drainage-details b{font-size:13px}
+  .map-key span,.map-footer #map-readout,.cam-help,.map-topline,.map-topline #map-status{font-size:10px}
+  .response-outcome{font-size:15px;line-height:1.65}
+}
