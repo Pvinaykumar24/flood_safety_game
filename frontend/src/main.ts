@@ -891,7 +891,9 @@ async function resetCurrentGame() {
 
 async function advanceOneStep(steps = 1) {
   if (!sessionId || advanceInFlight || sessionUnavailable) return;
-  if (campaignProgress.stageId === 'save-novara' && !gameState?.scenario_progress.active) {
+  if (uiState.getState().gameMode === 'guided-campaign'
+    && campaignProgress.stageId === 'save-novara'
+    && !gameState?.scenario_progress.active) {
     notify('Meteo AI: start the Eastbank storm before advancing its rainfall timeline.');
     return;
   }
@@ -1935,7 +1937,10 @@ document.querySelector('#next-story')!.addEventListener('click', () => {
 });
 document.querySelector('#pause')!.addEventListener('click', event => {
   if (paused && sessionUnavailable) { notify('Backend session unavailable. Use NEW RUN to reconnect and preserve a fresh Python session.'); return; }
-  if (campaignProgress.stageId === 'save-novara' && !gameState?.scenario_progress.active && paused) {
+  if (uiState.getState().gameMode === 'guided-campaign'
+    && campaignProgress.stageId === 'save-novara'
+    && !gameState?.scenario_progress.active
+    && paused) {
     notify('Meteo AI: start the Eastbank storm from the mission workbench before resuming its clock.');
     return;
   }
